@@ -9,6 +9,7 @@ class Todo extends Component{
         }
         this.onChangeHandler=this.onChangeHandler.bind(this);
         this.addData= this.addData.bind(this);
+        this.delete=this.delete.bind(this); 
     }
         onChangeHandler(event){
             var inputVal = event.target.value;
@@ -23,15 +24,31 @@ class Todo extends Component{
                     this.setState({
                         todoItems:itemInstance
                 })
-            console.log(this.state.todoItems)
+           // console.log(this.state.todoItems)
+            }
+
+            delete(event){
+                var id = event.target.id;
+                var itemInstance= this.state.todoItems;
+                itemInstance.splice(id,1);
+                    this.setState({
+                        todoItems:itemInstance
+                    })
             }
 
     render(){
+        var itemList = this.state.todoItems.map((e,i)=>
+        <li key={i}>{e} <span onClick={this.delete} id={1}>X</span></li>
+        )
         return(
             <div>
             <h1>Todo App</h1>
             <div className="header">todo react</div>
-            <div className="body"></div>
+            <div className="body">
+            <ul>
+                {itemList}
+            </ul>
+            </div>
             <div className="footer">
             <input type="text" value={this.state.item} onChange={this.onChangeHandler}/> 
             <p>{this.state.item}</p>
