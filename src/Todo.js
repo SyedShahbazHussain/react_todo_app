@@ -4,7 +4,7 @@ class Todo extends Component{
     constructor(props){
         super(props)
         this.state={
-            item: "hello",
+            item: "",
             todoItems:[]
         }
         this.onChangeHandler=this.onChangeHandler.bind(this);
@@ -22,7 +22,8 @@ class Todo extends Component{
                     var itemInstance= this.state.todoItems;
                     itemInstance.push(inputVal);
                     this.setState({
-                        todoItems:itemInstance
+                        todoItems:itemInstance,
+                        item:''
                 })
            // console.log(this.state.todoItems)
             }
@@ -32,18 +33,18 @@ class Todo extends Component{
                 var itemInstance= this.state.todoItems;
                 itemInstance.splice(id,1);
                     this.setState({
-                        todoItems:itemInstance
+                        todoItems:itemInstance,
+                        item:''
                     })
             }
 
     render(){
         var itemList = this.state.todoItems.map((e,i)=>
-        <li key={i}>{e} <span onClick={this.delete} id={1}>X</span></li>
+        <li key={i}>{e} <span onClick={this.delete} id={1}  > X </span></li>
         )
         return(
             <div>
-            <h1>Todo App</h1>
-            <div className="header">todo react</div>
+            <div className="header">React Todo Application</div>
             <div className="body">
             <ul>
                 {itemList}
@@ -51,9 +52,8 @@ class Todo extends Component{
             </div>
             <div className="footer">
             <input type="text" value={this.state.item} onChange={this.onChangeHandler}/> 
-            <p>{this.state.item}</p>
             
-            <button onClick={this.addData}> Add</button> 
+            <button onClick={this.addData}> + </button> 
             </div>
             </div>
         )

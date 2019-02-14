@@ -1,3 +1,74 @@
- .App {
-   text-align: center;
- }
+.App {
+  text-align: center;
+}
+
+.header {
+ background:rebeccapurple;
+ color: white;
+ text-transform: uppercase;
+ font-weight: 600;
+ padding: 16px;
+}
+
+.body {
+}
+.body ul{
+  margin: 0;
+  padding: 15px;
+
+}
+.body ul li{
+  background: rgb(119, 98, 139);
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: white;
+
+}
+
+.body ul li span{
+  cursor: pointer;
+  float: right;
+  font-weight: 500;
+
+}
+
+.footer{
+  position: fixed;
+  background: rebeccapurple;
+  padding: 15px;
+  width: 100%;
+   bottom: 0%; 
+}
+
+.footer input:focus{outline: none}
+
+.footer input{
+  width: 90%;
+  margin: auto;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: pink;
+  font-size: 17px;
+  height: 35px;
+
+}
+
+.footer button:focus{outline: none}
+
+.footer button{
+  cursor: pointer;
+  color: rebeccapurple;
+  position: absolute;
+  top: 6px;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 26px;
+  border: none;
+  background: white;
+  box-shadow: 2px 2px 3px;
+
+}
